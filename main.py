@@ -45,11 +45,9 @@ def run_command():
             if machine_list[index]["future"].exception():
                 machine_list[index]["result"]="failed"
                 machine_list[index]["result_message"]=str(machine_list[index]["future"].exception())
-                machine_list[index]["compare"]="NA"
             else:
                 machine_list[index]["result"]="success"
                 machine_list[index]["result_message"]=machine_list[index]["future"].result()
-                machine_list[index]["compare"]="NA"
             machine_list[index].pop("future")
         
         #RETURN RESULTS    
