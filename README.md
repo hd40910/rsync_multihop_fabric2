@@ -3,6 +3,7 @@
 
 ## Introduction
 1. Fabric2 + Patchwork based script to perform parallel copy to defined target hosts.
+2. Source has to be a local file or directory.The copy is based of rsync
 2. Multi hop is supported based on facric2 funtionalities.
 3. Additonal parameter supported by rsync can be passed as defined by https://fabric-patchwork.readthedocs.io/en/latest/.
 4. Just additonal keys into the the payload and it will get passed to Patchwork. Example : "delete : true " will enable the delete functinality of rsync
