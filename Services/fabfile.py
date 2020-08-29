@@ -92,9 +92,11 @@ def runCommand(command, warn=False, timeout=default_timeout, **kwargs):
 
 @exceptionHandler
 def rsync_to_remote(copy_from,copy_to, **kwargs):
-    connect = kwargs['connect']
+    connect = kwargs.pop('connect')
+    kwargs.pop("shell_type")
+    kwargs.pop("reload_command")
     try:
-        patchwork.transfers.rsync(connect, copy_from, copy_to)
+        patchwork.transfers.rsync(connect, copy_from, copy_to,**kwargs)
     except UnexpectedExit as e:
         if hasattr(e.result, 'stderr') and e.result.stderr:
             print ('Error :' + str(handlemessage(e.result.stderr)))

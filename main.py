@@ -7,9 +7,9 @@ from Services.FileUtils import fileToJson
 app = Flask(__name__)
 
 
-def rsync(machine_details, copy_from,copy_to):
+def rsync(machine_details, copy_from,copy_to, **keyargs):
     connect_handler = ConnectionHandler.ConnectionHandler(machine_details)
-    return connect_handler.rsync(copy_from,copy_to)
+    return connect_handler.rsync(copy_from,copy_to, **keyargs)
 
 
 @app.route('/copy', methods = ['POST'])
@@ -32,11 +32,13 @@ def run_command():
                     found = True
             if not found: raise Exception("Declaration not found for "+machine)
             
+        #Additional
+        keyargs = {"delete":False}
         #RUN COMMAND             
         pool = ThreadPoolExecutor(5)
         futures = []
         for index,machine in enumerate(machine_list):            
-            machine_list[index]["future"]=pool.submit(rsync,machine,copy_from,copy_to)
+            machine_list[index]["future"]=pool.submit(rsync,machine,copy_from,copy_to, **keyargs)
             futures.append(machine_list[index]["future"])
         wait(futures)
         

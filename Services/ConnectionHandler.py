@@ -12,15 +12,15 @@ class ConnectionHandler():
         self.machine_details = machine_details
         self.remote_authentication_service = RemoteAuthenticationService.RemoteAuthenticationService()
 
-    def runCommand(self,command):
-        return self.remote_authentication_service.authenticate(self.machine_details, self.run_on_remote,command)
+    def runCommand(self,command, **keyargs):
+        return self.remote_authentication_service.authenticate(self.machine_details, self.run_on_remote,command, **keyargs)
 
     def run_on_remote(self,command, **keyargs):
         result = runCommand(command, False, **keyargs)
         return str(result.stdout).strip()
     
-    def rsync(self,copy_from,copy_to):
-        return self.remote_authentication_service.authenticate(self.machine_details, self.rsync_to_remote,copy_from,copy_to)
+    def rsync(self,copy_from,copy_to, **keyargs):
+        return self.remote_authentication_service.authenticate(self.machine_details, self.rsync_to_remote,copy_from,copy_to, **keyargs)
 
     def rsync_to_remote(self,copy_from,copy_to, **keyargs):
         result = rsync_to_remote(copy_from,copy_to, **keyargs)
