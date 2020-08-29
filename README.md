@@ -18,11 +18,11 @@
 ## Target Definition
 ```
 [{
-    "machine_name": "ilgss0254",
+    "machine_name": "ilgss0254", --> Unique name
     "reload_command": "",
     "port": "22",
     "shell_type": "",
-    "steps_to_auth": [
+    "steps_to_auth": [ --> Multi Hop details
         {
             "username": "test",
             "order": 1,
