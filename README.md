@@ -10,6 +10,8 @@
 ## Requirments
 1. Python >=3.6 
 2. pip3.6 install patchwork == 1.0.1
+3. pip3.6 install Flask==0.12.4
+4. pip3.6 install futures==3.1.1
 
 
 ## Target Definition
