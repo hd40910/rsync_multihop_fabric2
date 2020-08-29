@@ -1,0 +1,19 @@
+[{
+    "machine_name": "ilgss0254",
+    "reload_command": "",
+    "port": "22",
+    "shell_type": "",
+    "steps_to_auth": [
+        {
+            "username": "atomiqroot",
+            "order": 1,
+            "host": "ilgss0254",
+            "password": "At0miQ123",
+            "type": "SSH",
+            "port": "22"
+        }
+    ],
+    "username": "atomiqroot",
+    "host": "ilgss0254",
+    "password": "At0miQ123"
+}]
