@@ -46,9 +46,8 @@
 python3.6 main.py
 ```
 
-```
 Basic:
-
+```
 curl --location --request POST 'http://localhost:1012/copy' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -56,9 +55,10 @@ curl --location --request POST 'http://localhost:1012/copy' \
     "copy_to":"/target/test",
     "machine_list":["ilgss0254"]
 }'
+```
 
 With keyargs:
-
+```
 curl --location --request POST 'http://localhost:1012/copy' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -70,10 +70,8 @@ curl --location --request POST 'http://localhost:1012/copy' \
 }'
 ```
 
-
-```
 CLI based:
-
+```
 import rsync_multihop_fabric2.main
 
 result = main.copy({
