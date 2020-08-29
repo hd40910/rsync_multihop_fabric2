@@ -17,6 +17,8 @@
 
 ## Target Definition
 ```
+#vi targets.json
+
 [{
     "machine_name": "ilgss0254", --> Unique name
     "reload_command": "",
