@@ -69,6 +69,21 @@ curl --location --request POST 'http://localhost:1012/copy' \
     "ssh_opts": "--rsh"
 }'
 ```
+
+
+```
+CLI based:
+
+import rsync_multihop_fabric2.main
+
+result = main.copy({
+    "copy_from":"/source/test",
+    "copy_to":"/target/test",
+    "machine_list":["ilgss0254"]
+});
+
+print(result)
+```
 ## Response
 ```
 {
