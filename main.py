@@ -13,15 +13,14 @@ def rsync(machine_details, copy_from,copy_to, **keyargs):
 
 
 @app.route('/copy', methods = ['POST'])
-def run_command():
+def copy(**keyargs):
     try:
-        
         #GET DATEILS
         data = request.get_json()
         avl_machines = fileToJson("targets.json")
-        machine_list = data.get("machine_list",[])
-        copy_from = data.get("copy_from")
-        copy_to = data.get("copy_to")
+        machine_list = data.get("machine_list",keyargs.pop("machine_list",[]))
+        copy_from = data.get("copy_from",keyargs.pop("copy_from","/source/test"))
+        copy_to = data.get("copy_to",keyargs.pop("copy_to","/target/test"))
 
         #get machines
         for index,machine in enumerate(machine_list):
