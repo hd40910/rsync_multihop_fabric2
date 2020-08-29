@@ -3,7 +3,7 @@
 
 ## Introduction
 Fabric2 + Patchwork based script to perform parallel copy to defined target hosts.
-Milti hop is supported based on facric2 funtionalities
+Multi hop is supported based on facric2 funtionalities
 
 ## Requirments
 1. Python >=3.6 
@@ -34,6 +34,11 @@ Milti hop is supported based on facric2 funtionalities
 ```
 
 ## Usage
+
+```
+python3.6 main.py
+```
+
 ```
 curl --location --request POST 'http://localhost:1012/copy' \
 --header 'Content-Type: application/json' \
