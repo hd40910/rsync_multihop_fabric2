@@ -7,11 +7,6 @@ from Services.FileUtils import fileToJson
 app = Flask(__name__)
 
 
-'''
-RUN COMMAND PORTAL
-###########################################################################################################################
-'''
-
 def rsync(machine_details, copy_from,copy_to):
     connect_handler = ConnectionHandler.ConnectionHandler(machine_details)
     return connect_handler.rsync(copy_from,copy_to)
@@ -67,4 +62,3 @@ def run_command():
 
 if __name__ == '__main__':
     app.run(port=1012,host='0.0.0.0')
-
