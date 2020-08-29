@@ -1,16 +1,16 @@
 # rsync_multihop_fabric2
 
 
-#Introcuction
+## Introduction
 Fabric2 + Patchwork based script to perform parallel copy to defined target hosts.
 Milti hop is supported based on facric2 funtionalities
 
-#Requirments
-Python >=3.6 
-pip3.6 install patchwork == 1.0.1
+## Requirments
+1. Python >=3.6 
+2. pip3.6 install patchwork == 1.0.1
 
 
-#Target Definition
+## Target Definition
 ```
 [{
     "machine_name": "ilgss0254",
@@ -33,7 +33,7 @@ pip3.6 install patchwork == 1.0.1
 }]
 ```
 
-#Usage
+## Usage
 ```
 curl --location --request POST 'http://localhost:1012/copy' \
 --header 'Content-Type: application/json' \
@@ -42,4 +42,17 @@ curl --location --request POST 'http://localhost:1012/copy' \
     "copy_to":"/target/test",
     "machine_list":["ilgss0254"]
 }'
+```
+## Response
+```
+{
+    "result": "success",
+    "machine_list": [
+        {
+            "machine_name": "ilgss0254",
+            "result": "success",
+            "result_message": "<Copied files list>"
+        }
+    ]
+}
 ```
